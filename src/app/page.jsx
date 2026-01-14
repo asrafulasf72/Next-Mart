@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer/Footer";
 import CTA from "@/components/Home/CTA";
 import Features from "@/components/Home/Features";
 import Hero from "@/components/Home/Hero";
@@ -12,19 +13,19 @@ export default function Home() {
   return (
     <>
       <header>
-         <Navbar/>
+        <Navbar />
       </header>
       <main>
-           <Hero/>
-           <Features/>
-           <HowItWorks/>
-           <ProductsPreview/>
-           <WhyChooseUs/>
-           <Testimonials/>
-           <CTA/>
+        <Hero />
+        <Features />
+        <HowItWorks />
+        <ProductsPreview />
+        <WhyChooseUs />
+        <Testimonials />
+        <CTA />
       </main>
       <footer>
-
+        <Footer />
       </footer>
     </>
 
