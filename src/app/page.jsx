@@ -1,3 +1,4 @@
+import CTA from "@/components/Home/CTA";
 import Features from "@/components/Home/Features";
 import Hero from "@/components/Home/Hero";
 import HowItWorks from "@/components/Home/HowItWorks";
@@ -20,6 +21,7 @@ export default function Home() {
            <ProductsPreview/>
            <WhyChooseUs/>
            <Testimonials/>
+           <CTA/>
       </main>
       <footer>
 
