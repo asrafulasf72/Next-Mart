@@ -1,0 +1,31 @@
+import LoginForm from '@/components/Auth/LoginForm';
+import Link from 'next/link';
+import React from 'react'
+
+const Login = () => {
+    return (
+        <section className="min-h-screen flex items-center justify-center px-6">
+            <div className="w-full max-w-md rounded-3xl border bg-card shadow-xl p-8">
+                <h1 className="text-3xl font-extrabold mb-2">
+                    Welcome Back
+                </h1>
+                <p className="text-muted-foreground mb-8">
+                    Sign in to manage your products
+                </p>
+
+                <LoginForm />
+
+                <p className="text-sm text-muted-foreground mt-6 text-center">
+                    Don’t have an account?{" "}
+                    <Link
+                        href="/register"
+                        className="text-primary font-medium hover:underline"
+                    >
+                        Create one
+                    </Link>
+                </p>
+            </div>
+        </section>
+    )
+}
+export default Login;
