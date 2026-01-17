@@ -4,9 +4,11 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import ThemeToggle from "../Theme Toggle/theme-toggle";
+import { signOut, useSession } from "next-auth/react";
 
 
 export default function Navbar() {
+  const {data: session}=useSession();
   return (
     <motion.nav
       initial={{ y: -60, opacity: 0 }}
@@ -43,7 +45,8 @@ export default function Navbar() {
             Items
           </Link>
 
-          <Link href="/login">
+          {
+            session?(<button onClick={()=> signOut()}>LogOut</button>):(<Link href="/login">
             <Button
               size="sm"
               className="
@@ -54,7 +57,8 @@ export default function Navbar() {
             >
               Login
             </Button>
-          </Link>
+          </Link>)
+          }
              {/* Dark Mode Toggle */}
           <ThemeToggle />
         </div>
