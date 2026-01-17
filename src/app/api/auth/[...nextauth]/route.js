@@ -4,13 +4,17 @@ import CredentialsProvider from "next-auth/providers/credentials";
 
 export const authOptions = {
   providers: [
-    // 🔹 Google Login
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      authorization: {
+        params: {
+          prompt: "select_account", // ⚡ Force Google account selection
+          access_type: "offline",
+          response_type: "code",
+        },
+      },
     }),
-
-    // 🔹 Email & Password Login (Professional mock)
     CredentialsProvider({
       name: "Credentials",
       credentials: {
@@ -18,7 +22,6 @@ export const authOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        // ⚠️ Replace with DB later
         const user = {
           id: "1",
           name: "Demo User",
@@ -60,8 +63,9 @@ export const authOptions = {
       return session;
     },
   },
+
+  secret: process.env.NEXTAUTH_SECRET,
 };
 
 const handler = NextAuth(authOptions);
-
 export { handler as GET, handler as POST };
