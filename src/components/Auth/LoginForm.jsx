@@ -32,7 +32,7 @@ const LoginForm = () => {
         }
 
         toast.success("Login successful 🎉");
-        router.push("/items");
+        router.push("/");
     };
 
     // Google login button
