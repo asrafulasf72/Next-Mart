@@ -31,6 +31,15 @@ export default function Navbar() {
           >
             Items
           </Link>
+          {
+            session && (
+              <Link href="/items/add">
+                <Button size="sm" variant="outline">
+                  Add Item
+                </Button>
+              </Link>
+            )
+          }
 
           {status === "loading" ? null : session ? (
             <Button onClick={() => signOut({ callbackUrl: "/" })} size="sm">
