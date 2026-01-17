@@ -40,7 +40,7 @@ const LoginForm = () => {
         setLoading(true);
         const res = await signIn("google", {
             redirect: false,        // handle manually
-            callbackUrl: "/items",  // redirect after login
+            callbackUrl: "/",  // redirect after login
         });
         setLoading(false);
 
@@ -59,7 +59,7 @@ const LoginForm = () => {
         }
 
         toast.success(`Google login successful 🎉 (${sessionData.user.email})`);
-        router.push(res.url || "/items");
+        router.push(res.url || "/");
     };
 
     return (
