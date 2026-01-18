@@ -22,7 +22,7 @@ export default async function ItemsPage() {
   const items = await getItems();
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-100">
+    <section className="min-h-screen bg-linear-to-b from-slate-50 via-white to-slate-100">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <h1 className="text-4xl font-bold mb-10 text-center">
           Explore Our Products

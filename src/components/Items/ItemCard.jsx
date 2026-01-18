@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ItemCard({ item }) {
   return (
@@ -13,9 +16,9 @@ export default function ItemCard({ item }) {
           className="object-cover group-hover:scale-110 transition-transform duration-500"
         />
 
-        {/* Price Badge */}
+        {/* Price */}
         <div className="absolute top-4 right-4 bg-black/80 text-white px-4 py-1 rounded-full text-sm">
-          $ {item.price}
+          ${item.price}
         </div>
       </div>
 
@@ -29,13 +32,13 @@ export default function ItemCard({ item }) {
           {item.description}
         </p>
 
-        <button className="w-full py-3 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-medium hover:opacity-90 transition">
-          View Details
-        </button>
+        {/* 👉 Navigate to details page */}
+        <Link href={`/items/${item._id}`}>
+          <button className="w-full py-3 rounded-full bg-linear-to-r from-indigo-500 to-purple-500 text-white font-medium hover:opacity-90 transition">
+            View Details
+          </button>
+        </Link>
       </div>
-
-      {/* Soft Glow */}
-      <div className="absolute inset-0 rounded-3xl ring-1 ring-black/5 pointer-events-none" />
     </div>
   );
 }
