@@ -8,5 +8,8 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require("tailwind-animate")],
+   plugins: [
+    require("tailwind-animate"),
+    require("@tailwindcss/line-clamp"),
+  ],
 };

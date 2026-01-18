@@ -47,3 +47,20 @@ export async function POST(req) {
     );
   }
 }
+
+/* 🔽 NEW: GET ALL ITEMS */
+
+export async function GET() {
+  try {
+
+    const db= await connectDB()
+    const items= await db.collection("items").find().sort({ createdAt: -1 }).toArray()
+    return NextResponse.json(items)
+
+  } catch (error) {
+    return NextResponse.json(
+      { message: "Failed to fetch items" },
+      { status: 500 }
+    );
+  }
+}

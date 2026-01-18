@@ -73,7 +73,7 @@ export default function AddItemForm() {
           className="w-full px-4 py-3 border rounded-xl"
         />
 
-        <Button className="w-full rounded-full py-6">
+        <Button className="w-full rounded-full py-6 cursor-pointer">
           Add Item
         </Button>
       </form>
